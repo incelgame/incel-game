@@ -177,10 +177,12 @@ MonoBehaviour:
   alltext: []
   allimag: []
   incel: {fileID: 21300000, guid: 1a589bd0d6979b744a298ad7e63420e9, type: 3}
-  itcel: {fileID: 21300000, guid: f65ce5926d3e79547a145c8eb61dcbe7, type: 3}
+  itcel: {fileID: 21300000, guid: bd2e93bece9186e479c36686292a14b2, type: 3}
   panel: {fileID: 0}
   text: {fileID: 0}
   imag: {fileID: 0}
+  ispoint: 0
+  index: 0
 --- !u!212 &212041072235325996
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -217,7 +219,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: f9835491ef1cc5743a5726989074783f, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.50980395}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

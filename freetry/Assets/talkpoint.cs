@@ -14,9 +14,10 @@ public class talkpoint : MonoBehaviour {
     public Text text;
     public Image imag;
 
+    public bool ispoint;
     
     private bool start;
-    private int index;
+    public int index;
     private GameObject player;
     private AudioSource aud;
 
@@ -26,8 +27,8 @@ public class talkpoint : MonoBehaviour {
         player = collision.gameObject;
         panel.SetActive(true);
         collision.gameObject.GetComponent<playermov>().stopmoving = true;
-        start = true;
 
+        start = true;
     }
 
     // Use this for initialization
@@ -39,6 +40,7 @@ public class talkpoint : MonoBehaviour {
 	void Update () {
         if (start)
         {
+
             imag.sprite = allimag[index];
             text.text = alltext[index];
 
@@ -50,14 +52,22 @@ public class talkpoint : MonoBehaviour {
             
             if(index > alltext.Length-1)
             {
+
                 index = 0;
                 start = false;
                 panel.SetActive(false);
                 player.GetComponent<playermov>().stopmoving = false;
+                if (ispoint)
+                {
+                    player.transform.GetChild(0).GetChild(0).gameObject.GetComponent<gamecontrol>().chapters[index].SetActive(false);
+                    player.transform.GetChild(0).GetChild(0).gameObject.GetComponent<gamecontrol>().index += 1;
+
+                }
                 gameObject.SetActive(false);
 
             }
 
         }
+
 	}
 }
